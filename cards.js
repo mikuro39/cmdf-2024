@@ -41,7 +41,6 @@ for (let card of cards) {
         swipeOut();
         const swipeDirection = ev.offsetDirection === 2 ? "left" : "right"; // 2 indicates left, 4 indicates right
         swipeData[card.id] = swipeDirection; // Assuming each card has a unique ID
-        saveSwipeDataToServer(swipeData); // Save swipe data to server
     });
 
     cardhammer.on("pan", function(ev) {
@@ -108,11 +107,4 @@ function simulateSwipeOut(card, direction) {
 
     const swipeDirection = direction === 'left' ? 'left' : 'right';
     swipeData[card.id] = swipeDirection; // Assuming each card has a unique ID
-    saveSwipeDataToServer(swipeData); // Save swipe data to server
-}
-
-
-function saveSwipeDataToServer(data) {
-    // Code to send swipe data to server (e.g., via AJAX request)
-    console.log("Swipe data:", data);
 }
