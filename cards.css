@@ -1,3 +1,212 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap");
+
+
+:root {
+    --playfair-display: "Playfair Display", serif;
+    --plus-jakarta-sans: "Plus Jakarta Sans", sans-serif;
+  
+    --primary-color: #b1454a;
+    --secondary-color: #121212;
+  
+    --black-200: #020202;
+    --black-300: #333333;
+    --black-400: #1f1e31;
+    --black-500: #555555;
+    --gray-100: #888888;
+  
+    --color-white: #fff;
+    --color-creamson: #fff0de;
+  }
+
+.header__nav {
+    display: flex;
+    overflow: hidden;
+    justify-content: space-between; /* Add this to push the logo to the left */
+}
+
+.header__logo {
+    display: flex;
+    align-items: top; /* Align items vertically in the center */
+    padding: 20px;
+}
+
+.header__logo-overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    background-color: var(--primary-color);
+    z-index: -1;
+}
+
+.header__logo h4 {
+    padding-left: 30px;
+    margin: 0;
+    font-weight: 700;
+    font-size: 24px;
+    text-transform: uppercase;
+    font-family: var(--plus-jakarta-sans);
+    color: #F66E57;
+    opacity: 0.8;
+}
+
+.header__menu, .header__menu-mobile {
+    padding: 20px;
+    flex: 1.236;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 64px;
+
+    list-style: none;
+}
+
+.header__menu li {
+    font-weight: 500;
+    font-family: var(--plus-jakarta-sans);
+    color: var(--secondary-color);
+    font-size: 16px;
+    text-transform: uppercase;
+    line-height: 20px;
+    cursor: pointer;
+}
+
+.header__menu li img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.header__menu-mobile {
+    display: none;
+    gap: 20px;
+    position: relative;
+}
+
+
+.buttons {
+    margin-top: 50px;
+    text-align: center;
+    border-radius: 30px;
+}
+
+.blob-btn {
+    z-index: 1;
+    position: relative;
+    padding: 20px 46px;
+    margin-bottom: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #F98B88; /* $cyan */
+    font-size: 16px;
+    font-weight: bold;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    transition: color 0.5s;
+    cursor: pointer;
+    border-radius: 30px;
+    font-family: var(--plus-jakarta-sans);
+}
+
+.blob-btn:before {
+    content: "";
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #F98B88; /* $borderW and $cyan */
+    border-radius: 30px;
+}
+
+.blob-btn:after {
+    content: "";
+    z-index: -2;
+    position: absolute;
+    left: 3px; /* $borderW*1.5 */
+    top: 3px; /* $borderW*1.5 */
+    width: calc(100% - 6px); /* Adjusted for border */
+    height: calc(100% - 6px); /* Adjusted for border */
+    transition: all 0.3s 0.2s;
+    border-radius: 30px;
+}
+
+.blob-btn:hover {
+    color: #FFFFFF; /* $dark */
+}
+
+.blob-btn:hover:after {
+    transition: all 0.3s;
+    left: 0;
+    top: 0;
+}
+
+.blob-btn__inner {
+    z-index: -1;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    background: #FFFFFF;
+}
+
+.blob-btn__blobs {
+    position: relative;
+    display: block;
+    height: 100%;
+    filter: url('#goo');
+}
+
+.blob-btn__blob {
+    position: absolute;
+    top: 2px; /* $borderW */
+    width: 25%; /* Approximation for 4 blobs */
+    height: 100%;
+    background: #F98B88; /* $cyan */
+    border-radius: 100%;
+    transform: translate3d(0, 150%, 0) scale(1.7);
+    transition: transform 0.45s;
+}
+
+/* Repeat .blob-btn__blob styles for each blob with adjusted left and transition-delay */
+.blob-btn:hover .blob-btn__blob {
+    transform: translateZ(0) scale(1.7);
+}
+
+/* Assuming 4 blobs, you'd create styles for each blob individually. Example for the first blob: */
+.blob-btn__blob:nth-child(1) {
+    left: 0%;
+    transition-delay: 0s;
+}
+
+.blob-btn__blob:nth-child(2) {
+    left: 30%; /* Adjusted for 4 blobs, not exact calculation */
+    transition-delay: 0.08s;
+}
+
+.blob-btn__blob:nth-child(3) {
+    left: 60%; /* Adjusted for 4 blobs */
+    transition-delay: 0.16s;
+}
+
+.blob-btn__blob:nth-child(4) {
+    left: 90%; /* Adjusted for 4 blobs */
+    transition-delay: 0.24s;
+}
+
+h1 {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}
+
 .container {
     height: 100vh;
     width: 100vw;
@@ -5,7 +214,9 @@
     align-items: center;
     display: grid;
     grid-template-areas: 'center';
+    margin-top: -200px; /* Adjust this value as needed */
 }
+
 
 .card {
     cursor: move;
@@ -134,39 +345,37 @@
 }
 
 body {
-    background: #f3e3e9;
-    font-family: "Raleway", sans-serif;
+    background: #fff0de;
+    font-family: var(--plus-jakarta-sans);
     font-weight: 400;
     font-style: normal;
     overflow: hidden;
 }
 
-h4 {
-    position: fixed;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 50%;
-}
 
 
 #navigateButton {
+    z-index: 1;
     position: fixed;
     left: 50%;
     top: 50%;
     transform: translateX(-50%);
-    padding: 10px 20px;
-    background-color: white;
-    color: #9b6c75;
-    border: 2px solid #ffc0cb;
-    border-radius: 5px;
-    cursor: pointer;
+    padding: 20px 46px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #F98B88; /* $cyan */
     font-size: 16px;
-    font-family: 'Raleway', sans-serif;
-    text-decoration: none;
-    box-shadow: 0 4px 6px rgba(255, 105, 180, 0.2);
+    font-weight: bold;
+    background-color: white;
+    outline: none;
+    border: 3px solid #F98B88; /* Same color as text color for consistency */
+    transition: color 0.5s;
+    cursor: pointer;
+    border-radius: 30px;
+    font-family: var(--plus-jakarta-sans);
 }
 
 #navigateButton:hover {
-    background-color: #ffc0cb;
+    background-color: #F98B88;
     color: white;
 }

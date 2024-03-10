@@ -11,40 +11,88 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&family=Raleway&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <button class="back-btn">&#8592; Back</button>
-    <h2>Your Top Matches</h2>
+    <header>
+        <nav class="header__nav">
+          <div class="header__logo">
+            <h4 data-aos="fade-down">STEMPOWER</h4>
+            <div class=""></div>
+          </div>
+          
+          <ul class="header__menu" data-aos="fade-down">
+            <a href="index.html" class="header-blob-btn">
+                Home
+                <span class="header-blob-btn__inner">
+                  <span class="header-blob-btn__blobs">
+                    <span class="header-blob-btn__blob"></span>
+                    <span class="header-blob-btn__blob"></span>
+                    <span class="header-blob-btn__blob"></span>
+                    <span class="header-blob-btn__blob"></span>
+                  </span>
+                </span>
+              </a>
+            
+            <a href="profile.html" class="header-blob-btn">
+                Profile
+                <span class="header-blob-btn__inner">
+                  <span class="header-blob-btn__blobs">
+                    <span class="header-blob-btn__blob"></span>
+                    <span class="header-blob-btn__blob"></span>
+                    <span class="header-blob-btn__blob"></span>
+                    <span class="header-blob-btn__blob"></span>
+                  </span>
+                </span>
+              </a>
+
+              <a href="about.html" class="header-blob-btn">
+                About
+                <span class="header-blob-btn__inner">
+                  <span class="header-blob-btn__blobs">
+                    <span class="header-blob-btn__blob"></span>
+                    <span class="header-blob-btn__blob"></span>
+                    <span class="header-blob-btn__blob"></span>
+                    <span class="header-blob-btn__blob"></span>
+                  </span>
+                </span>
+              </a>
+          
+        </nav>
+      </header>
+    <h1>YOUR TOP MATCHES</h1>
     <div class="container">
         <div class="card">
             <div class="title">Route A</div>
             <img class="question-pic" src="https://static.vecteezy.com/system/resources/previews/014/809/566/original/data-analyst-line-icon-vector.jpg" alt=""/>
             <div class="body">
-                <p>Data analyst</p>
+                <p class="job">Data analyst</p>
                 <p>A data analyst interprets data and turns it into information that can offer ways to improve a business, thus affecting business decisions.</p>
             </div>
-            <button class="btn">Learn More</button>
+            <button class="back-btn">LEARN MORE</button>
         </div>
         <div class="card">
             <div class="title">Route B</div>
             <img class="question-pic" src="https://static.vecteezy.com/system/resources/previews/021/211/362/original/data-scientist-female-icon-style-free-vector.jpg" alt=""/>
             <div class="body">
-                <p>Data scientist</p>
+                <p class="job">Data scientist</p>
                 <p>A data scientist gathers and analyzes large sets of structured and unstructured data, developing algorithms and predictive models to extract valuable insights from the data.</p>
             </div>
-            <button class="btn">Learn More</button>
+            <button class="back-btn">LEARN MORE</button>
         </div>
         <div class="card">
             <div class="title">Route C</div>
             <img class="question-pic" src="https://static.vecteezy.com/system/resources/previews/012/854/182/original/backend-development-icon-style-vector.jpg" alt=""/>
             <div class="body">
-                <p>Back end developer</p>
+                <p class="job">Back end developer</p>
                 <p>A back end developer is responsible for server-side web application logic and integration of the work front-end developers do.</p>
             </div>
-            <button class="btn">Learn More</button>
+            <button class="back-btn">LEARN MORE</button>
         </div>
     </div>
     <script>
-        document.querySelector(".back-btn").addEventListener("click", function() {
-            window.location.href = "cards.html";
+        const learnMoreButtons = document.querySelectorAll(".back-btn");
+        learnMoreButtons.forEach(button => {
+            button.addEventListener("click", function() {
+                window.location.assign("plan.html");
+            });
         });
     </script>
 </body>

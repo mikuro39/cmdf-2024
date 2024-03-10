@@ -1,8 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap");
+
+/* CSS variables for reusablity across all files (including above imported) */
+:root {
+  --playfair-display: "Playfair Display", serif;
+  --plus-jakarta-sans: "Plus Jakarta Sans", sans-serif;
+
+  --primary-color: #b1454a;
+  --secondary-color: #121212;
+
+  --black-200: #020202;
+  --black-300: #333333;
+  --black-400: #1f1e31;
+  --black-500: #555555;
+  --gray-100: #888888;
+
+  --color-white: #fff;
+  --color-creamson: #fff0de;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
 /* CSS for background color of the whole website */
 body {
-    background-color: #f3e3e9; /* Light pink background for the entire webpage */
+    background-color: #fff0de; /* Light pink background for the entire webpage */
     margin: 0; /* Remove default margin to ensure background covers the entire viewport */
-    font-family: 'Raleway', sans-serif; /* Use Roboto font for the entire webpage */
+    font-family: var(--plus-jakarta-sans); /* Use Roboto font for the entire webpage */
     color: #333; /* Default text color */
     text-align: center; /* Center align all text */
 }
@@ -30,11 +57,13 @@ body {
     width: calc(30% - 20px); /* Smaller width */
     margin-bottom: 20px;
     background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 20px; /* Rounded corners */
+    box-shadow: none; /* Remove box shadow for flat design */
+    border: 2px solid #F98B88; /* Orange color outline */
     overflow: hidden;
     animation: floatCard 2s alternate; /* Apply floating animation */
 }
+
 
 @keyframes floatCard {
     from {
@@ -47,9 +76,16 @@ body {
 
 .title {
     padding: 20px;
-    font-family: 'Raleway', sans-serif;
+    font-family: var(--plus-jakarta-sans);
     font-size: 2rem;
     color: rgb(56, 47, 47)c75;
+}
+
+.job {
+    font-family: var(--plus-jakarta-sans);
+    font-size: 1.5rem;
+    color: var(--black-200);
+    margin-bottom: 20px;
 }
 
 .question-pic {
@@ -62,43 +98,237 @@ body {
 
 .body {
     padding: 20px;
-    font-family: 'Raleway', sans-serif;
+    font-family: var(--plus-jakarta-sans);
     color: #666;
 }
 
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    margin-top: 20px;
-    background-color: white; /* White background color */
-    color: #9b6c75; /* Dark pink text color */
-    border: 2px solid #ffc0cb; /* Pink outline */
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    font-family: 'Raleway', sans-serif; /* Same font as the webpage */
-    text-decoration: none;
-    margin-bottom: 20px; /* Padding at the bottom */
-    box-shadow: 0 4px 6px rgba(255, 105, 180, 0.2); /* Pink shadow effect */
-}
-
-.btn:hover {
-    background-color: #ffc0cb; /* Pink background color on hover */
-    color: white; /* White text color on hover */
-}
-
 .back-btn {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    background: none;
-    border: none;
-    color: #9b6c75;
+    z-index: 1;
+    position: relative;
+    padding: 20px 46px;
+    margin-bottom: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #F98B88; /* $cyan */
     font-size: 16px;
-    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    background-color: transparent;
+    outline: none;
+    border: 3px solid #F98B88; /* Same color as text color for consistency */
+    transition: color 0.5s;
     cursor: pointer;
+    border-radius: 30px;
+    font-family: var(--plus-jakarta-sans);
 }
 
 .back-btn:hover {
-    color: #604349;
+    background-color: #F98B88; /* Change background color on hover */
+    color: white; /* Change text color on hover */
+}
+
+.header__nav {
+    display: flex;
+    overflow: hidden;
+    justify-content: space-between; /* Add this to push the logo to the left */
+}
+
+.header__logo {
+    display: flex;
+    align-items: top; /* Align items vertically in the center */
+    padding: 20px;
+}
+
+.header__logo-overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    background-color: var(--primary-color);
+    z-index: -1;
+}
+
+.header__logo h4 {
+    padding-left: 30px;
+    margin: 0;
+    font-weight: 700;
+    font-size: 24px;
+    text-transform: uppercase;
+    font-family: var(--plus-jakarta-sans);
+    color: #F66E57;
+    opacity: 0.8;
+}
+
+.header__menu, .header__menu-mobile {
+    padding: 20px;
+    flex: 1.236;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 64px;
+
+    list-style: none;
+}
+
+.header__menu li {
+    font-weight: 500;
+    font-family: var(--plus-jakarta-sans);
+    color: var(--secondary-color);
+    font-size: 16px;
+    text-transform: uppercase;
+    line-height: 20px;
+    cursor: pointer;
+}
+
+.header__menu li img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.header__menu-mobile {
+    display: none;
+    gap: 20px;
+    position: relative;
+}
+
+.buttons {
+    margin-top: 50px;
+    text-align: center;
+    border-radius: 30px;
+}
+
+.header-blob-btn {
+    z-index: 1;
+    position: relative;
+    padding: 20px 46px;
+    margin-bottom: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #F98B88; /* $cyan */
+    font-size: 16px;
+    font-weight: bold;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    transition: color 0.5s;
+    cursor: pointer;
+    border-radius: 30px;
+    font-family: var(--plus-jakarta-sans);
+}
+
+.header-blob-btn:before {
+    content: "";
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #F98B88; /* $borderW and $cyan */
+    border-radius: 30px;
+}
+
+.header-blob-btn:after {
+    content: "";
+    z-index: -2;
+    position: absolute;
+    left: 3px; /* $borderW*1.5 */
+    top: 3px; /* $borderW*1.5 */
+    width: calc(100% - 6px); /* Adjusted for border */
+    height: calc(100% - 6px); /* Adjusted for border */
+    transition: all 0.3s 0.2s;
+    border-radius: 30px;
+}
+
+.header-blob-btn:hover {
+    color: #FFFFFF; /* $dark */
+}
+
+.header-blob-btn:hover:after {
+    transition: all 0.3s;
+    left: 0;
+    top: 0;
+}
+
+.header-blob-btn__inner {
+    z-index: -1;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    background: #FFFFFF;
+}
+
+.header-blob-btn__blobs {
+    position: relative;
+    display: block;
+    height: 100%;
+    filter: url('#goo');
+}
+
+.header-blob-btn__blob {
+    position: absolute;
+    top: 2px; /* $borderW */
+    width: 25%; /* Approximation for 4 blobs */
+    height: 100%;
+    background: #F98B88; /* $cyan */
+    border-radius: 100%;
+    transform: translate3d(0, 150%, 0) scale(1.7);
+    transition: transform 0.45s;
+}
+
+/* Repeat .header-blob-btn__blob styles for each blob with adjusted left and transition-delay */
+.header-blob-btn:hover .header-blob-btn__blob {
+    transform: translateZ(0) scale(1.7);
+}
+
+/* Assuming 4 blobs, you'd create styles for each blob individually. Example for the first blob: */
+.header-blob-btn__blob:nth-child(1) {
+    left: 0%;
+    transition-delay: 0s;
+}
+
+.header-blob-btn__blob:nth-child(2) {
+    left: 30%; /* Adjusted for 4 blobs, not exact calculation */
+    transition-delay: 0.08s;
+}
+
+.header-blob-btn__blob:nth-child(3) {
+    left: 60%; /* Adjusted for 4 blobs */
+    transition-delay: 0.16s;
+}
+
+.header-blob-btn__blob:nth-child(4) {
+    left: 90%; /* Adjusted for 4 blobs */
+    transition-delay: 0.24s;
+}
+
+
+.blob-btn {
+    /* Your existing styles */
+    position: relative;
+    display: inline-block;
+    padding: 20px 46px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #F98B88;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    transition: color 0.5s;
+    cursor: pointer;
+    border-radius: 30px;
+    font-family: var(--plus-jakarta-sans);
+    width: 200px;
+    height: 60px;
+    margin: 0 auto; /* Center the button horizontally */
+}
+
+
+.blob-btn:hover {
+    color: #FFFFFF; /* $dark */
 }
