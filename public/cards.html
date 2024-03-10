@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEMPOWERher</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./css/cards.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&family=Raleway&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <nav class="header__nav">
+      <div class="header__logo">
+        <h4 data-aos="fade-down">STEMPOWER-HER</h4>
+        <div class=""></div>
+      </div>
+      
+      <ul class="header__menu" data-aos="fade-down">
+        <a href="index.html" class="blob-btn">
+            Home
+            <span class="blob-btn__inner">
+              <span class="blob-btn__blobs">
+                <span class="blob-btn__blob"></span>
+                <span class="blob-btn__blob"></span>
+                <span class="blob-btn__blob"></span>
+                <span class="blob-btn__blob"></span>
+              </span>
+            </span>
+          </a>
+
+          <a href="cards.html" class="blob-btn">
+            Cards
+            <span class="blob-btn__inner">
+              <span class="blob-btn__blobs">
+                <span class="blob-btn__blob"></span>
+                <span class="blob-btn__blob"></span>
+                <span class="blob-btn__blob"></span>
+                <span class="blob-btn__blob"></span>
+              </span>
+            </span>
+          </a>
+
+          <a href="/profile" class="blob-btn">
+            Profile
+            <span class="blob-btn__inner">
+              <span class="blob-btn__blobs">
+                <span class="blob-btn__blob"></span>
+                <span class="blob-btn__blob"></span>
+                <span class="blob-btn__blob"></span>
+                <span class="blob-btn__blob"></span>
+              </span>
+            </span>
+          </a>
+
+          <a href="/logout" class="blob-btn">Logout
+            <span class="blob-btn__inner">
+              <span class="blob-btn__blobs">
+                <span class="blob-btn__blob"></span>
+                <span class="blob-btn__blob"></span>
+                <span class="blob-btn__blob"></span>
+                <span class="blob-btn__blob"></span>
+              </span>
+            </span>
+          </a>
+      
+    </nav>
+  </header>
+
+    <div class="card-prompt">
+      <h1>Pick your interests</h1>
+      <p>Swipe left if you are familiar, swipe right if you aren't</p>
+    </div>
+      
+    
+      <button id="navigateButton">View my results</button>
+
+    <script>
+        document.getElementById("navigateButton").addEventListener("click", function() {
+            window.location.href = "topmatches.html";
+        });
+    </script>
+
+    <div class="container">
+        <div class="card">
+            <div class="title">Question 1</div>
+            <img class="question-pic" src=
+                            "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png"
+                            alt=""/>
+            <div class="body">Are you familiar with this topic?</div>
+            <div class="img-container">
+                <img src= "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Eo_circle_green_checkmark.svg/1024px-Eo_circle_green_checkmark.svg.png"
+                alt=""/>
+                <img src= "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Flat_cross_icon.svg/1200px-Flat_cross_icon.svg.png"
+                alt=""/>
+            </div>
+        </div>
+        <div class="card">
+            <div class="title">Question 2</div>
+            <img class="question-pic" src=
+                            "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/R_logo.svg/1200px-R_logo.svg.png"
+                            alt=""/>
+            <div class="body">Are you familiar with this topic?</div>
+            <div class="img-container">
+                <img src= "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Eo_circle_green_checkmark.svg/1024px-Eo_circle_green_checkmark.svg.png"
+                alt=""/>
+                <img src= "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Flat_cross_icon.svg/1200px-Flat_cross_icon.svg.png"
+                alt=""/>
+            </div>
+        </div>
+        <div class="card">
+            <div class="title">Question 3</div>
+            <img class="question-pic" src=
+                            "https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Java_programming_language_logo.svg/1200px-Java_programming_language_logo.svg.png"
+                            alt=""/>
+            <div class="body">Are you familiar with this topic?</div>
+            <div class="img-container">
+                <img src= "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Eo_circle_green_checkmark.svg/1024px-Eo_circle_green_checkmark.svg.png"
+                alt=""/>
+                <img src= "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Flat_cross_icon.svg/1200px-Flat_cross_icon.svg.png"
+                alt=""/>
+            </div>
+        </div>
+        <div class="card">
+            <div class="title">Question 4</div>
+            <img class="question-pic" src=
+                            "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/1200px-ISO_C%2B%2B_Logo.svg.png"
+                            alt=""/>
+            <div class="body">Are you familiar with this topic?</div>
+            <div class="img-container">
+                <img src= "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Eo_circle_green_checkmark.svg/1024px-Eo_circle_green_checkmark.svg.png"
+                alt=""/>
+                <img src= "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Flat_cross_icon.svg/1200px-Flat_cross_icon.svg.png"
+                alt=""/>
+            </div>
+        </div>
+    </div>
+    <script src="./hammer.min.js"></script> 
+    <script src="./cards.js"></script>
+</body>
+</html>
