@@ -9,6 +9,7 @@
 
   position: relative;
   padding: 20px;
+  
 }
 
 .header__logo-overlay {
@@ -21,7 +22,9 @@
 }
 
 .header__logo h4 {
-  padding-left: 30px;
+  padding-left: 10px;
+  padding-top: 10px;
+  
 
   font-weight: 700;
   font-size: 24px;

@@ -134,7 +134,7 @@
 }
 
 body {
-    background: #f3e3e9;
+    background: #fff0de;
     font-family: "Raleway", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -157,7 +157,7 @@ h4 {
     padding: 10px 20px;
     background-color: white;
     color: #9b6c75;
-    border: 2px solid #ffc0cb;
+    border: 2px solid #F98B88;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;

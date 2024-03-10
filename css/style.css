@@ -10,6 +10,7 @@
 @import url("sections/subscribe.css");
 @import url("sections/footer.css");
 @import url("sections/profile.css");
+@import url("sections/cards.css");
 
 /* CSS variables for reusablity across all files (including above imported) */
 :root {
@@ -442,4 +443,349 @@ a {
 .blob-btn__blob:nth-child(4) {
   left: 90%; /* Adjusted for 4 blobs */
   transition-delay: 0.24s;
+}
+
+iframe{
+  /* border: 5px  solid black; */
+  height: 100%;
+  width: 50%;
+  margin-top: -3%;
+  margin-left: 30%;
+  display: flex;
+  position: absolute;
+}
+
+.container {
+  border: 5px solid #C6776B;
+  height: 100vh;
+  width: 100wh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  height: 5%;
+  margin-left: 20%;
+  margin-top: 10%;
+}
+
+.wrapper {
+  border: 5px solid #E2887A;
+  display: flex;
+  /* flex-direction: row; */
+  /* margin-top: 20%; */
+  
+}
+
+.content {
+  border: 5px solid #FFBBB0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+
+}
+
+.content h1 {
+  font-size: 4vmin;
+  /* width:40%; */
+  color: #F98B88;
+  text-align: center;
+}
+
+.content p {
+  
+  margin-bottom: 20px;
+}
+
+.glow-on-hover {
+  font-family: --plus-jakarta-sans;
+  width: 220px;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #d39e96;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.glow-on-hover:before {
+  content: '';
+  background: linear-gradient(45deg, #C6776B, #E2887A, #FFBBB0, #cea59f, #E2887A, #FFBBB0, #C6776B, #E2887A, #FFBBB0);
+  position: absolute;
+  top: -2px;
+  left:-2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
+}
+
+.glow-on-hover:active {
+  color: #461414
+}
+
+.glow-on-hover:active:after {
+  background: transparent;
+}
+
+.glow-on-hover:hover:before {
+  opacity: 1;
+}
+
+.glow-on-hover:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #8d4444;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+}
+
+.glowing-button-container {
+  height: 100vh;
+  width: 100wh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  height: 5%;
+  margin-left: 20%;
+  margin-top: 2%;
+  font-family: var(--plus-jakarta-sans);
+}
+
+
+
+/* DEMO-SPECIFIC STYLES */
+.typewriter h1 {
+  
+  color: #111;
+  font-family: monospace;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(30, end),
+    blink-caret .5s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange }
+}
+
+
+/* friends cards */
+@import url('https://fonts.googleapis.com/css?family=Abel');
+
+html, body {
+  background: #FCEEB5;
+  font-family: Abel, Arial, Verdana, sans-serif;
+}
+
+.center {
+  /* border: 5px  solid black;  */
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  margin-top: 5%;
+  -webkit-transform: translate(-50%, -50%);
+  
+}
+
+.card {
+  
+  width: 450px;
+  height: 250px;
+  background-color: #fff;
+  background: linear-gradient(#f8f8f8, #fff);
+  box-shadow: 0 8px 16px -8px rgba(0,0,0,0.4);
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  margin: 1rem;
+  margin-right: 100%;
+}
+
+.card h1 {
+  text-align: center;
+}
+
+.card .additional {
+  position: absolute;
+  width: 150px;
+  height: 100%;
+  background: linear-gradient(#dE685E, #EE786E);
+  transition: width 0.4s;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.card.green .additional {
+  background: linear-gradient(#92bCa6, #A2CCB6);
+}
+
+
+.card:hover .additional {
+  width: 100%;
+  border-radius: 0 5px 5px 0;
+}
+
+.card .additional .user-card {
+  width: 150px;
+  height: 100%;
+  position: relative;
+  float: left;
+}
+
+.card .additional .user-card::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 10%;
+  right: -2px;
+  height: 80%;
+  border-left: 2px solid rgba(0,0,0,0.025);
+}
+
+.card .additional .user-card .level,
+.card .additional .user-card .points {
+  top: 15%;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 0.75em;
+  font-weight: bold;
+  background: rgba(0,0,0,0.15);
+  padding: 0.125rem 0.75rem;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+.card .additional .user-card .points {
+  top: 85%;
+}
+
+.card .additional .user-card svg {
+  top: 50%;
+}
+
+.card .additional .more-info {
+  width: 300px;
+  float: left;
+  position: absolute;
+  left: 150px;
+  height: 100%;
+}
+
+.card .additional .more-info h1 {
+  color: #fff;
+  margin-bottom: 0;
+}
+
+.card.green .additional .more-info h1 {
+  color: #224C36;
+}
+
+.card .additional .coords {
+  margin: 0 1rem;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.card.green .additional .coords {
+  color: #325C46;
+}
+
+.card .additional .coords span + span {
+  float: right;
+}
+
+.card .additional .stats {
+  font-size: 2rem;
+  display: flex;
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  top: auto;
+  color: #fff;
+}
+
+.card.green .additional .stats {
+  color: #325C46;
+}
+
+.card .additional .stats > div {
+  flex: 1;
+  text-align: center;
+}
+
+.card .additional .stats i {
+  display: block;
+}
+
+.card .additional .stats div.title {
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.card .additional .stats div.value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1.5rem;
+}
+
+.card .additional .stats div.value.infinity {
+  font-size: 2.5rem;
+}
+
+.card .general {
+  width: 300px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  box-sizing: border-box;
+  padding: 1rem;
+  padding-top: 0;
+}
+
+.card .general .more {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  font-size: 0.9em;
 }

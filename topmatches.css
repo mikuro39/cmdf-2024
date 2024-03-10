@@ -1,6 +1,6 @@
 /* CSS for background color of the whole website */
 body {
-    background-color: #f3e3e9; /* Light pink background for the entire webpage */
+    background-color: #fff0de; /* Light pink background for the entire webpage */
     margin: 0; /* Remove default margin to ensure background covers the entire viewport */
     font-family: 'Raleway', sans-serif; /* Use Roboto font for the entire webpage */
     color: #333; /* Default text color */
@@ -83,7 +83,7 @@ body {
 }
 
 .btn:hover {
-    background-color: #ffc0cb; /* Pink background color on hover */
+    background-color: #F98B88; /* Pink background color on hover */
     color: white; /* White text color on hover */
 }
 
