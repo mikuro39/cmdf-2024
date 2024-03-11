@@ -60,7 +60,8 @@ app.post("/register", async (req, res) => {
 
         await User.create({ name, email, password: hashedPassword });
 
-        res.status(201).send("User registered successfully");
+        // res.status(201).send("User registered successfully");
+        res.sendFile(__dirname + "/public/login.html");
 
      } catch (error) {
         console.error("Error registering user:", error);
