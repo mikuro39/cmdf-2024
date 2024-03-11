@@ -70,7 +70,7 @@ app.post("/register", async (req, res) => {
 
 });
 
-// Route for login
+// Route for login 
 app.post("/login", async (req, res) => {
     try {
         // Extract data from request
